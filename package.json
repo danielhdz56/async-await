@@ -1,0 +1,22 @@
+{
+  "name": "async-await",
+  "version": "1.0.0",
+  "description": "",
+  "main": "CC-app-promise.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielhdz56/async-await.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielhdz56/async-await/issues"
+  },
+  "homepage": "https://github.com/danielhdz56/async-await#readme",
+  "dependencies": {
+    "axios": "^0.16.1"
+  }
+}
