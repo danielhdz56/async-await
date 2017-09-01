@@ -1,22 +1,42 @@
 {
-  "name": "async-await",
+  "name": "todo-api",
   "version": "1.0.0",
   "description": "",
-  "main": "CC-app-promise.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server/server.js",
+    "test": "export NODE_ENV=test || SET \"NODE_ENV=test\" && mocha server/**/*.test.js",
+    "test-watch": "nodemon --exec 'npm test'"
+  },
+  "engines": {
+    "node": "6.2.2"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/danielhdz56/async-await.git"
+    "url": "git+https://github.com/danielhdz56/node-todo-api.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/danielhdz56/async-await/issues"
+    "url": "https://github.com/danielhdz56/node-todo-api/issues"
   },
-  "homepage": "https://github.com/danielhdz56/async-await#readme",
+  "homepage": "https://github.com/danielhdz56/node-todo-api#readme",
   "dependencies": {
-    "axios": "^0.16.1"
+    "axios": "^0.16.2",
+    "bcryptjs": "^2.3.0",
+    "body-parser": "^1.15.2",
+    "crypto-js": "^3.1.6",
+    "express": "^4.14.0",
+    "jsonwebtoken": "^7.1.9",
+    "lodash": "^4.15.0",
+    "mongodb": "^2.2.5",
+    "mongoose": "^4.5.9",
+    "validator": "^5.6.0"
+  },
+  "devDependencies": {
+    "expect": "^1.20.2",
+    "mocha": "^3.0.2",
+    "nodemon": "^1.10.2",
+    "supertest": "^2.0.0"
   }
 }
