@@ -52,28 +52,47 @@ const getStatus = (userId) => {
         if(grades.length > 0) {
             average = grades.map((grade) => grade.grade).reduce((a, b) => a + b) / grades.length;
         }
-
         return `${user.name} has a ${average}% in the class.`;
         //average
         //return our string
-
     });
 };
 
-getUser(2).then((user) => {
-    console.log(user);
-}).catch((e) => {
-    console.log(e);
-});
 
-getGrades(101).then((grade) => {
-    console.log(grade);
-}).catch((e) => {
-    console.log(e);
-});
+const getStatusAlt = async (userId) => { // async functions always return promises 
+    // we are awaiting for the promise to either resolve or reject. 
+    // If its resolved it is stored in the user variable
+    // If its rejected an error is thrown and user never gets defined 
+    const user = await getUser(userId); // the next line wont run until the promise resolves or rejects
+    const grades = await getGrades(user.schoolId);
+    let average = 0;
+    if(grades.length > 0) {
+        average = grades.map((grade) => grade.grade).reduce((a, b) => a + b) / grades.length;
+    }
+    return `${user.name} has a ${average}% in the class.`;
 
-getStatus(3).then((status) => {
+};
+
+getStatusAlt(1).then((status) => {
     console.log(status);
-}).catch((e) => {
+}).catch((e)=> {
     console.log(e);
 });
+
+// getUser(2).then((user) => {
+//     console.log(user);
+// }).catch((e) => {
+//     console.log(e);
+// });
+
+// getGrades(101).then((grade) => {
+//     console.log(grade);
+// }).catch((e) => {
+//     console.log(e);
+// });
+
+// getStatus(3).then((status) => {
+//     console.log(status);
+// }).catch((e) => {
+//     console.log(e);
+// });
